@@ -31,3 +31,7 @@ AUX channels are analog
 Switches use two buttons, one for each state. This makes it easier to bind them to functions in the simulator.
 
 If someone wants a 3-point switch, I could add it.
+
+=====
+
+If you want to compile it yourself, you will need the SBUS library from: https://github.com/bolderflight/SBUS
