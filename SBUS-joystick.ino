@@ -35,8 +35,6 @@ void loop()
 {
   if(sbus.read(&channels[0], &failSafe, &lostFrame))
   {
-    if (!failSafe && !lostFrame)
-    {
       Joystick.X(map(channels[ROLL - 1], 240, 1807, 0, 1023));
       Joystick.Y(map(channels[PITCH - 1], 240, 1807, 0, 1024));      
       Joystick.Z(map(channels[THROTTLE - 1], 240, 1807, 0, 1024));
@@ -50,7 +48,6 @@ void loop()
       Joystick.button(4, map(channels[SWB - 1], 240, 1807, 0, 1) == 0 ? 1 : 0); // SWB OFF = button 4
   
       Joystick.send_now();
-    }
   }
 }
 
