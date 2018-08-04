@@ -58,7 +58,7 @@ void loop()
       
       Joystick.button(9, map(channels[SWD - 1], 240, 1807, 0, 1) == 0 ? 1 : 0); // SWD LOW = button 9
       Joystick.button(10, map(channels[SWD - 1], 240, 1807, 0, 1) == 1 ? 1 : 0); // SWD HIGH = button 10
-  
+      
       Joystick.send_now();
   }
 }
