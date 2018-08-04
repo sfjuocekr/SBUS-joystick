@@ -9,7 +9,7 @@ Flash your Teensy using the Teensy Loader from https://www.pjrc.com/teensy/loade
 or...
 
 Compile and modify it yourself, you will need the SBUS library from: https://github.com/bolderflight/SBUS
-
+... and edit usb_desc.h to change JOYSTICK_SIZE from 12 to 64. 
 
 By default the channel map is as follows:
 
@@ -23,9 +23,8 @@ AUX2 = channel 7
 
 SWA = channel 5
 SWB = channel 6
+SWC = channel 9
+SWD = channel 10
 
-AUX channels are analog
 
-Switches use two buttons, one for each state. This makes it easier to bind them to functions in the simulator.
-
-If someone wants a 3-point switch, I could add it.
+Switches use one button for each state. This makes it easier to bind them to functions in the simulator.
