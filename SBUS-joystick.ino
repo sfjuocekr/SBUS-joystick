@@ -8,10 +8,10 @@
 **/
 
 // Channel mapping
-#define ROLL 2
 #define PITCH 1
-#define YAW 4
+#define ROLL 2
 #define THROTTLE 3
+#define YAW 4
 #define AUX1 5
 #define AUX2 6
 #define SWA 7
