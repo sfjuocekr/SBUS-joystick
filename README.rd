@@ -13,18 +13,18 @@ Compile and modify it yourself, you will need the SBUS library from: https://git
 
 By default the channel map is as follows:
 
-ROLL = channel 2
 PITCH = channel 1
-YAW = channel 4
+ROLL = channel 2
 THROTTLE = channel 3
+YAW = channel 4
 
-AUX1 = channel 8
-AUX2 = channel 7
+AUX1 = channel 5
+AUX2 = channel 6
 
-SWA = channel 5
-SWB = channel 6
-SWC = channel 9
-SWD = channel 10
+SWA = channel 7 (3-point) 
+SWB = channel 8 (3-point) 
+SWC = channel 9 (2-point) 
+SWD = channel 10 (2-point) 
 
 
-Switches use one button for each state. This makes it easier to bind them to functions in the simulator.
+Switches use one button for each state as this makes it easier to bind them to functions in the simulator.
