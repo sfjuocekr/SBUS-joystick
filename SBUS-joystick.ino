@@ -42,8 +42,8 @@ void loop()
       Joystick.Z(map(channels[THROTTLE - 1], 240, 1807, 0, 65535));
       
       Joystick.Zrotate(map(channels[YAW - 1], 240, 1807, 0, 65535));
-      Joystick.Yrotate(map(channels[AUX1 - 1], 240, 1807, 0, 65535));
-      Joystick.Xrotate(map(channels[AUX2 - 1], 240, 1807, 0, 65535));
+      Joystick.Xrotate(map(channels[AUX1 - 1], 240, 1807, 0, 65535));
+      Joystick.Yrotate(map(channels[AUX2 - 1], 240, 1807, 0, 65535));
       
       Joystick.button(1, map(channels[SWA - 1], 240, 1807, 0, 2) == 0 ? 1 : 0); // SWA LOW = button 1
       Joystick.button(2, map(channels[SWA - 1], 240, 1807, 0, 2) == 1 ? 1 : 0); // SWA MID = button 2
