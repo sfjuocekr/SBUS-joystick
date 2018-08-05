@@ -28,3 +28,6 @@ SWD = channel 10 (2-point)
 
 
 Switches use one button for each state as this makes it easier to bind them to functions in the simulator.
+
+
+To calibrate your endpoints, assuming they are the same for every channel, move throttle up and down all the way after power up!
