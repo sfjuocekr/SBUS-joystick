@@ -1,8 +1,8 @@
 /**
  * A very simple HID joystick using a Teensy and SBUS receiver on RX1
  * 
- * USB type = serial + keyboard + mouse + joystick
- * TODO: write a custom HID joystick header
+ * USB type = serial + keyboard + mouse + joystick (USB_SERIAL_HID) 
+ * Change JOYSTICK_SIZE from 12 to 64 in: <Path to Arduino IDE>\hardware\teensy\avr\cores\teensy3\usb_desc.h
  * 
  * Sjoer van der Ploeg, 2018
 **/
