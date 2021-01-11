@@ -1,7 +1,7 @@
 A very simple SBUS USB HID joystick on a Teensy 3.2:
 
 Connect SBUS to RX1.
-Connect power to 3V for 3.3v or if your transmitter needs 5v use VUSB near Micro-USB port on the back.
+Connect power to 3V for 3.3v or if your receiver needs 5v use VUSB near Micro-USB port on the back.
 Connect ground.
 
 Flash your Teensy using the Teensy Loader from https://www.pjrc.com/teensy/loader.html
