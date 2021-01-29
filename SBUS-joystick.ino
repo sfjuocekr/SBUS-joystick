@@ -8,8 +8,8 @@
 **/
 
 // SBUS range, check serial output to determine these values!
-#define STARTPOINT 172
-#define ENDPOINT 1811
+#define STARTPOINT 221
+#define ENDPOINT 1824
 
 // Channel mapping
 #define PITCH 1
@@ -24,7 +24,6 @@
 #define SWB 8
 #define SWC 9
 #define SWD 10
-
 #define SWE 11
 #define SWF 12
 #define SWG 13
@@ -51,18 +50,18 @@ void sentSerial()
 {
   for (uint8_t _i = 0; _i < sizeof(channels) / sizeof(uint16_t); _i++)
   {
-    Serial.print(String(_i) + ": ");
+    Serial.print(String(_i) + F(": "));
     Serial.print(channels[_i]);
     
     if (_i < sizeof(channels) / sizeof(uint16_t) - 1)
-      Serial.print(" ");
+      Serial.print(F(" "));
     else
       Serial.println();
   }
     
-  Serial.print("Failsafe: ");
+  Serial.print(F("Failsafe: "));
   Serial.print(failSafe);
-  Serial.print("\tFrame lost: ");
+  Serial.print(F("\tFrame lost: "));
   Serial.println(lostFrame);
 }
 
@@ -72,19 +71,13 @@ void loop()
   if(sbus.read(&channels[0], &failSafe, &lostFrame))
   {
     Joystick.X(map(channels[ROLL - 1], STARTPOINT, ENDPOINT, 0, 65535));
-      constrain(channels[ROLL - 1], 0, 65535);
     Joystick.Y(map(channels[PITCH - 1], STARTPOINT, ENDPOINT, 0, 65535));      
-      constrain(channels[PITCH - 1], 0, 65535);
     Joystick.Z(map(channels[THROTTLE - 1], STARTPOINT, ENDPOINT, 0, 65535));
-      constrain(channels[THROTTLE - 1], 0, 65535);
 
-    Joystick.Zrotate(map(channels[YAW - 1], STARTPOINT, ENDPOINT, 0, 65535));
-      constrain(channels[YAW - 1], 0, 65535);
     Joystick.Xrotate(map(channels[AUX1 - 1], STARTPOINT, ENDPOINT, 0, 65535));
-      constrain(channels[AUX1 - 1], 0, 65535);
     Joystick.Yrotate(map(channels[AUX2 - 1], STARTPOINT, ENDPOINT, 0, 65535));
-      constrain(channels[AUX2 - 1], 0, 65535);
-    
+    Joystick.Zrotate(map(channels[YAW - 1], STARTPOINT, ENDPOINT, 0, 65535));
+
     Joystick.button(1, map(channels[SWA - 1], STARTPOINT, ENDPOINT, 0, 2) == 0 ? 1 : 0); // SWA LOW = button 1
     Joystick.button(2, map(channels[SWA - 1], STARTPOINT, ENDPOINT, 0, 2) == 1 ? 1 : 0); // SWA MID = button 2
     Joystick.button(3, map(channels[SWA - 1], STARTPOINT, ENDPOINT, 0, 2) == 2 ? 1 : 0); // SWA HIGH = button 3
@@ -118,6 +111,7 @@ void loop()
     Joystick.button(24, map(channels[SWH - 1], STARTPOINT, ENDPOINT, 0, 2) == 2 ? 1 : 0); // SWB HIGH = button 24
 
     Joystick.send_now();
-    sentSerial();
   }
+
+  sentSerial();
 }
