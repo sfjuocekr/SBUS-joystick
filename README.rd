@@ -1,5 +1,7 @@
-A very simple SBUS USB HID joystick on a Teensy 3.2:
+# There is a new CRSF-Joystick at: https://github.com/sfjuocekr/CRSF-joystick
+This suports CrossFire and has SBUS fallback.
 
+# A very simple SBUS USB HID joystick on a Teensy 3.2
 Connect SBUS to RX1.
 Connect power to 3V for 3.3v or if your receiver needs 5v use VUSB near Micro-USB port on the back.
 Connect ground.
